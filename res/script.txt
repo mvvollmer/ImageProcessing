@@ -1,0 +1,27 @@
+load images/bunny.jpeg bunny
+red-component bunny bunny-red
+green-component bunny bunny-green
+blue-component bunny bunny-blue
+value-component bunny bunny-value
+intensity-component bunny bunny-intensity
+luma-component bunny bunny-luma
+horizontal-flip bunny bunny-horizontal
+vertical-flip bunny bunny-vertical
+brighten 50 bunny bunny-brightened-by-50
+blur bunny bunny-blurred
+sharpen bunny bunny-sharpened
+sepia bunny bunny-sepia
+greyscale bunny bunny-greyscale
+
+save images/bunny-red.png bunny-red
+save images/bunny-intensity.png bunny-intensity
+save images/bunny-horizontal.png bunny-horizontal
+save images/bunny-vertical.jpg bunny-vertical
+save images/bunny-brightened-by-50.jpeg bunny-brightened-by-50
+save images/bunny-blurred.png bunny-blurred
+save images/bunny-sharpened.bmp bunny-sharpened
+save images/bunny-sepia.bmp bunny-sepia
+save images/bunny-greyscale.jpeg bunny-greyscale
+
+quit
+

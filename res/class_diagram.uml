@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/alex1/Programming/CS3500/image_processing/src</OriginalElement>
+  <nodes>
+    <node x="0.0" y="878.0">controller.commands.Flip</node>
+    <node x="862.0" y="878.0">controller.commands.Component</node>
+    <node x="309.0" y="1045.0">view.ImageProcessingView</node>
+    <node x="748.0" y="0.0">util.kernel.Kernel</node>
+    <node x="1724.0" y="878.0">controller.commands.Filter</node>
+    <node x="2155.0" y="878.0">controller.commands.Brighten</node>
+    <node x="0.0" y="1045.0">controller.ImageProcessingController</node>
+    <node x="854.0" y="1045.0">util.ImageProcessingProgram</node>
+    <node x="14.0" y="1150.0">controller.Controller</node>
+    <node x="578.0" y="1045.0">util.ImageUtil</node>
+    <node x="309.5" y="1172.0">view.View</node>
+    <node x="404.0" y="0.0">model.ImageProcessingModelState</node>
+    <node x="381.0" y="171.0">model.ImageProcessingModel</node>
+    <node x="431.0" y="889.0">controller.commands.Save</node>
+    <node x="1293.0" y="889.0">controller.commands.Load</node>
+    <node x="748.0" y="149.0">util.kernel.ImageKernel</node>
+    <node x="38.0" y="149.0">util.image.Image</node>
+    <node x="2586.0" y="878.0">controller.commands.Transformation</node>
+    <node x="1293.0" y="773.0">controller.commands.ImageProcessingCommand</node>
+    <node x="68.5" y="0.0">util.image.ImageState</node>
+    <node x="0.0" y="342.0">util.image.PixelImage</node>
+    <node x="381.0" y="386.0">model.Model</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="util.image.Image" target="util.image.ImageState" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-71.5" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="controller.commands.Transformation" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="2791.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="model.Model" target="model.ImageProcessingModel" relationship="REALIZATION">
+      <point x="0.0" y="-149.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="controller.commands.Brighten" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="2360.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="model.ImageProcessingModel" target="model.ImageProcessingModelState" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-82.5" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="controller.commands.Filter" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="1929.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="util.kernel.ImageKernel" target="util.kernel.Kernel" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="controller.commands.Flip" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="205.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="controller.commands.Component" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="1067.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="controller.commands.Save" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="636.5" y="853.0" />
+      <point x="1498.5" y="853.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="util.image.PixelImage" target="util.image.Image" relationship="REALIZATION">
+      <point x="0.0" y="-193.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="view.View" target="view.ImageProcessingView" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="controller.commands.Load" target="controller.commands.ImageProcessingCommand" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="controller.Controller" target="controller.ImageProcessingController" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.3679151474975141" showDependencies="false" x="1498.5" y="636.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
