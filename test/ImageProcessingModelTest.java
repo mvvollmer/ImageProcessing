@@ -82,7 +82,7 @@ public class ImageProcessingModelTest {
   }
 
   @Test
-  public void tryMosaic() {
+  public void try1SeedMosaic() {
     this.testModel.mosaicImage( "dumby", "dumbyBrighten", 1);
     ImageState dumbyBrighten = this.testModel.getImage("dumbyBrighten");
     StringBuilder sb1 = new StringBuilder();
@@ -96,11 +96,32 @@ public class ImageProcessingModelTest {
       }
     }
 
-    sb2.append("0 0 0 255 255 255 255 255 255 "
-            + "5 5 5 250 250 250 250 250 250 "
-            + "100 100 100 100 100 100 100 100 100 "
-            + "250 250 250 5 5 5 5 5 5 "
-            + "255 255 255 0 0 0 0 0 0 ");
+    sb2.append("255 255 255 255 255 255 255 255 255 255 255 255 " +
+            "255 255 255 255 255 255 255 255 255 " +
+            "255 255 255 255 255 255 255 255 255 255 255 255 " +
+            "255 255 255 255 255 255 255 255 255 255 255 255 ");
+    assertEquals(sb1.toString(), sb2.toString());
+  }
+
+  @Test
+  public void try3SeedMosaic() {
+    this.testModel.mosaicImage( "dumby", "dumbyBrighten", 3);
+    ImageState dumbyBrighten = this.testModel.getImage("dumbyBrighten");
+    StringBuilder sb1 = new StringBuilder();
+    StringBuilder sb2 = new StringBuilder();
+
+    for (int row = 0; row < dumbyBrighten.getImageHeight(); row++) {
+      for (int col = 0; col < dumbyBrighten.getImageWidth(); col++) {
+        sb1.append(dumbyBrighten.getPixelAt(row, col).getRed()).append(" ");
+        sb1.append(dumbyBrighten.getPixelAt(row, col).getGreen()).append(" ");
+        sb1.append(dumbyBrighten.getPixelAt(row, col).getBlue()).append(" ");
+      }
+    }
+
+    sb2.append("0 0 0 255 255 255 255 255 255 0 0 0 " +
+            "255 255 255 255 255 255 0 0 0 255 255 255 " +
+            "255 255 255 0 0 0 255 255 255 255 255 " +
+            "255 0 0 0 0 0 0 0 0 0 ");
     assertEquals(sb1.toString(), sb2.toString());
   }
 
