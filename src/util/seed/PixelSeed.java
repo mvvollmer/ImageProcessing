@@ -68,8 +68,8 @@ public class PixelSeed implements ISeed {
   private void cluster() {
     for (int i = 0; i < image.getImageHeight(); i++) {
       for (int j = 0; j < image.getImageWidth(); j++) {
-        Color current = image.getPixelAt(i, j);
-        Posn currentPosn = new Posn(i, j);
+        Color current = image.getPixelAt(j, i);
+        Posn currentPosn = new Posn(j, i);
         Seedling closest = positions.get(0);
         for (int l = 1; l < positions.size(); l++) {
           if (!closerSeedling(closest, positions.get(l), currentPosn)) {
