@@ -32,10 +32,7 @@ public class PixelSeed implements ISeed {
   public void createSeed() {
     int height = image.getImageHeight();
     int width = image.getImageWidth();
-    for (int i = 0; i < positions.size(); i++) {
-      Seedling current = positions.get(i);
-      cluster(current);
-    }
+    cluster();
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
       current.colorSeedling();
@@ -69,9 +66,7 @@ public class PixelSeed implements ISeed {
     return base;
   }
 
-  private void cluster(Seedling seedling) {
-    int centerX = seedling.getPosn().getX();
-    int centerY = seedling.getPosn().getY();
+  private void cluster() {
     for (int i = 0; i < image.getImageHeight(); i++) {
       for (int j = 0; j < image.getImageWidth(); j++) {
         Color current = image.getPixelAt(i, j);
