@@ -96,7 +96,7 @@ public class Seedling implements ISeedling{
       Posn currentPosn = x;
       int curX = currentPosn.getX();
       int curY = currentPosn.getY();
-      base[curX][curY] = this.getColors().get(0);
+      base[curY][curX] = this.getColors().get(0);
     }
   }
 

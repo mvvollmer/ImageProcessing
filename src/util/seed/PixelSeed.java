@@ -29,8 +29,6 @@ public class PixelSeed implements ISeed {
 
   @Override
   public void createSeed() {
-    int height = image.getImageHeight();
-    int width = image.getImageWidth();
     cluster();
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
@@ -44,9 +42,6 @@ public class PixelSeed implements ISeed {
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
       current.addColors(base);
-      int x = current.getPosn().getX();
-      int y = current.getPosn().getY();
-      base[y][x] = Color.MAGENTA;
     }
     return base;
   }
@@ -68,7 +63,7 @@ public class PixelSeed implements ISeed {
   private void cluster() {
     for (int i = 0; i < image.getImageHeight(); i++) {
       for (int j = 0; j < image.getImageWidth(); j++) {
-        Color current = image.getPixelAt(j, i);
+        Color current = image.getPixelAt(i, j);
         Posn currentPosn = new Posn(j, i);
         Seedling closest = positions.get(0);
         for (int l = 1; l < positions.size(); l++) {
