@@ -7,7 +7,6 @@ import java.util.List;
 
 import util.Posn;
 import util.image.Image;
-import util.image.PixelImage;
 
 /**
  * Class representing a PixelSeed.
