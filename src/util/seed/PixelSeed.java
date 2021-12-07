@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import util.Posn;
+import util.image.Image;
 import util.image.PixelImage;
 
 /**
@@ -14,14 +15,14 @@ import util.image.PixelImage;
 public class PixelSeed implements ISeed {
   private int numSeeds;
   private List<Seedling> positions;
-  private PixelImage image;
+  private Image image;
 
   /**
    * Constructs a PixelSeed with an integer number of seeds and a PixelImage.
    * @param numSeeds desired number of seeds.
    * @param image image which you would like to Mosaic.
    */
-  public PixelSeed(int numSeeds, PixelImage image) {
+  public PixelSeed(int numSeeds, Image image) {
     this.numSeeds = numSeeds;
     this.image = image;
     this.positions = buildSeed(numSeeds);
@@ -72,11 +73,11 @@ public class PixelSeed implements ISeed {
       for (int j = 0; j < image.getImageWidth(); j++) {
         Color current = image.getPixelAt(i, j);
         Posn currentPosn = new Posn(i, j);
-        if (!seededPixel(current)) {
+        if (!seededPixel(currentPosn)) {
           seedling.addPixel(current, currentPosn);
         }
         else {
-          if (closerSeedling(seedling, getSeedling(current), currentPosn)) {
+          if (closerSeedling(seedling, getSeedling(currentPosn), currentPosn)) {
             seedling.addPixel(current, currentPosn);
           }
         }
@@ -84,10 +85,10 @@ public class PixelSeed implements ISeed {
     }
   }
 
-  private boolean seededPixel(Color color){
+  private boolean seededPixel(Posn posn){
     int x = 0;
     for (int i = 0; i < positions.size(); i++) {
-      if (positions.get(i).containsColor(color)) {
+      if (positions.get(i).containsPosn(posn)) {
         x = x + 1;
       }
     }
@@ -114,10 +115,10 @@ public class PixelSeed implements ISeed {
     return Math.sqrt((xDis * xDis) +  (yDis * yDis));
   }
 
-  private Seedling getSeedling(Color c) {
+  private Seedling getSeedling(Posn p) {
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
-      if (current.containsColor(c)) {
+      if (current.containsPosn(p)) {
         return current;
       }
     }

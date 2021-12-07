@@ -32,8 +32,8 @@ public class Seedling implements ISeedling{
   }
 
   @Override
-  public boolean containsColor(Color color) {
-    return containedPixels.containsValue(color);
+  public boolean containsPosn(Posn posn) {
+    return containedPixels.containsKey(posn);
   }
 
   @Override

@@ -206,7 +206,7 @@ public class Model implements ImageProcessingModel {
   public void mosaicImage(String imageName, String desiredName, int seedNum) {
     validateNames(imageName, desiredName);
     Image start = getImage(imageName);
-    PixelSeed cur = new PixelSeed(seedNum, (PixelImage) start);
+    PixelSeed cur = new PixelSeed(seedNum, start);
     cur.createSeed();
     Color[][] fin = cur.createSeedImage();
     load(desiredName, new PixelImage(fin));

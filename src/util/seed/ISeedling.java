@@ -19,10 +19,9 @@ public interface ISeedling {
 
   /**
    * determines whether a seedling contains a Pixel.
-   * @param color Pixel Color.
    * @return if Seedling contains given Color or not.
    */
-  public boolean containsColor(Color color);
+  public boolean containsPosn(Posn pos);
 
   /**
    * gets the number of Pixels contained in a seedling.
