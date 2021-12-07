@@ -9,6 +9,7 @@ import java.util.List;
 import model.ImageProcessingModel;
 import util.image.Image;
 import util.image.PixelImage;
+import util.seed.PixelSeed;
 
 /**
  * Mock model class utilized for testing.
@@ -70,6 +71,18 @@ public class MockGUIModel implements ImageProcessingModel {
 
     log.append(String.format("brightenImage method called with parameters: %d, %s, %s",
         increment, imageName, desiredName));
+  }
+
+  @Override
+  public void mosaicImage(String imageName, String desiredName, int seedNum) {
+    Image start = getImage(imageName);
+    PixelSeed cur = new PixelSeed(seedNum, (PixelImage) start);
+    cur.createSeed();
+    Color[][] fin = cur.createSeedImage();
+
+    loadMap.put(desiredName, new PixelImage(fin));
+
+    log.append(String.format("mosaicImage method called with parameters: %s, %s, %d", imageName, desiredName, seedNum));
   }
 
   @Override

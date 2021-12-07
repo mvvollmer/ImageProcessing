@@ -1,8 +1,8 @@
 package util.seed;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,9 +44,9 @@ public class Seedling implements ISeedling{
   @Override
   public void colorSeedling() {
     List<Color> colors = this.getColors();
-    List<Integer> redComps = Collections.emptyList();
-    List<Integer> greenComps = Collections.emptyList();
-    List<Integer> blueComps = Collections.emptyList();
+    List<Integer> redComps = new ArrayList<>();
+    List<Integer> greenComps = new ArrayList<>();
+    List<Integer> blueComps = new ArrayList<>();
     for (int i = 0; i < colors.size(); i++) {
       Color current = colors.get(i);
       int redComp = current.getRed();
@@ -71,11 +71,11 @@ public class Seedling implements ISeedling{
     for (int i = 0; i < length; i++) {
       sum = sum + ints.get(i);
     }
-    return sum;
+    return sum/length;
   }
 
   private List<Color> getColors() {
-    List<Color> base = Collections.emptyList();
+    List<Color> base = new ArrayList<>();
     Collection<Color> colors = containedPixels.values();
     Object[] colorArray = colors.toArray();
     for (int i = 0; i < colorArray.length; i++) {
@@ -87,9 +87,8 @@ public class Seedling implements ISeedling{
 
   public void addColors(Color[][] base) {
     Set<Posn> posns = containedPixels.keySet();
-    Posn[] posnArray = (Posn[]) posns.toArray();
-    for (int i = 0; i < this.getLength(); i++) {
-      Posn currentPosn = posnArray[i];
+    for (Posn x : posns) {
+      Posn currentPosn = x;
       int curX = currentPosn.getX();
       int curY = currentPosn.getY();
       base[curX][curY] = this.getColors().get(1);

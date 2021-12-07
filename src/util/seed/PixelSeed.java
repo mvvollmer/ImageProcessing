@@ -1,7 +1,7 @@
 package util.seed;
 
 import java.awt.Color;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -52,7 +52,7 @@ public class PixelSeed implements ISeed {
   }
 
   private List<Seedling> buildSeed(int numSeeds) {
-    List<Seedling> base = Collections.emptyList();
+    List<Seedling> base = new ArrayList<>();
     int height = image.getImageHeight();
     int width = image.getImageWidth();
     for (int i = 0; i < numSeeds; i++) {

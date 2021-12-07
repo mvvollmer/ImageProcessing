@@ -67,6 +67,12 @@ public class MockImageProcessingModel implements ImageProcessingModel {
   }
 
   @Override
+  public void mosaicImage(String imageName, String desiredName, int seedNum) {
+    log.append(String.format("mosaicImage method called with parameters: %s, %s, %d",
+            imageName, desiredName, seedNum));
+  }
+
+  @Override
   public void displayGreyscale(String component, String imageName, String desiredName)
           throws IllegalArgumentException {
     log.append(String.format("displayGreyscale method called with parameters: %s, %s, %s",
