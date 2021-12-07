@@ -89,8 +89,8 @@ public class Seedling implements ISeedling{
     Set<Posn> posns = containedPixels.keySet();
     for (Posn x : posns) {
       Posn currentPosn = x;
-      int curX = currentPosn.getX();
-      int curY = currentPosn.getY();
+      int curX = currentPosn.getX() - 1;
+      int curY = currentPosn.getY() - 1;
       base[curX][curY] = this.getColors().get(1);
     }
   }
