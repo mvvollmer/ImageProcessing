@@ -44,13 +44,13 @@ public class PixelSeed implements ISeed {
 
   @Override
   public Color[][] createSeedImage() {
-    Color[][] base = new Color[image.getImageWidth()][image.getImageHeight()];
+    Color[][] base = new Color[image.getImageHeight()][image.getImageWidth()];
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
       current.addColors(base);
-      int x = current.getPosn().getX() - 1;
-      int y = current.getPosn().getY() - 1;
-      base[x][y] = Color.MAGENTA;
+      int x = current.getPosn().getX();
+      int y = current.getPosn().getY();
+      base[y - 1][x - 1] = Color.MAGENTA;
     }
     return base;
   }

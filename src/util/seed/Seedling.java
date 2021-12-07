@@ -68,10 +68,15 @@ public class Seedling implements ISeedling{
   private int avg(List<Integer> ints) {
     int sum = 0;
     int length = ints.size();
-    for (int i = 0; i < length; i++) {
-      sum = sum + ints.get(i);
+    if (length == 0) {
+      return 0;
     }
-    return sum/length;
+    else {
+      for (int i = 0; i < length; i++) {
+        sum = sum + ints.get(i);
+      }
+      return sum/length;
+    }
   }
 
   private List<Color> getColors() {
@@ -89,8 +94,8 @@ public class Seedling implements ISeedling{
     Set<Posn> posns = containedPixels.keySet();
     for (Posn x : posns) {
       Posn currentPosn = x;
-      int curX = currentPosn.getX() - 1;
-      int curY = currentPosn.getY() - 1;
+      int curX = currentPosn.getX();
+      int curY = currentPosn.getY();
       base[curX][curY] = this.getColors().get(1);
     }
   }
