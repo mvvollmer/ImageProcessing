@@ -76,14 +76,13 @@ public class PixelSeed implements ISeed {
       for (int j = 0; j < image.getImageWidth(); j++) {
         Color current = image.getPixelAt(i, j);
         Posn currentPosn = new Posn(i, j);
-        if (!seededPixel(currentPosn)) {
-          seedling.addPixel(current, currentPosn);
-        }
-        else {
-          if (closerSeedling(seedling, getSeedling(currentPosn), currentPosn)) {
-            seedling.addPixel(current, currentPosn);
+        Seedling closest = positions.get(0);
+        for (int l = 1; l < positions.size(); l++) {
+          if (!closerSeedling(closest, positions.get(l), currentPosn)) {
+            closest = positions.get(l);
           }
         }
+        closest.addPixel(current, currentPosn);
       }
     }
   }
