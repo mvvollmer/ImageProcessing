@@ -47,7 +47,7 @@ public class PixelSeed implements ISeed {
       current.addColors(base);
       int x = current.getPosn().getX();
       int y = current.getPosn().getY();
-      base[y - 1][x - 1] = Color.MAGENTA;
+      base[y][x] = Color.MAGENTA;
     }
     return base;
   }
