@@ -21,7 +21,6 @@ public class PixelSeed implements ISeed {
    * @param image image which you would like to Mosaic.
    */
   public PixelSeed(int numSeeds, Image image) {
-    numSeeds = numSeeds;
     this.image = image;
     this.positions = buildSeed(numSeeds);
   }
@@ -75,7 +74,7 @@ public class PixelSeed implements ISeed {
     }
   }
 
-  private boolean seededPixel(Posn posn){
+  private boolean seededPixel(Posn posn) {
     int x = 0;
     for (int i = 0; i < positions.size(); i++) {
       if (positions.get(i).containsPosn(posn)) {
