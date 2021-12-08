@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MosaicImageProcessing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MosaicImageProcessing_jar</output-path>
+    <root id="archive" name="OtherImageProcessing.jar">
+      <element id="module-output" name="OtherImageProcessing" />
+      <element id="library" level="project" name="image_processing" />
+    </root>
+  </artifact>
+</component>
