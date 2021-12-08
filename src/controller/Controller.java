@@ -6,6 +6,7 @@ import controller.commands.Filter;
 import controller.commands.Flip;
 import controller.commands.ImageProcessingCommand;
 import controller.commands.Load;
+import controller.commands.Mosaic;
 import controller.commands.Quit;
 import controller.commands.Save;
 import controller.commands.Transformation;
@@ -72,6 +73,7 @@ public class Controller implements ImageProcessingController {
     knownCommands.put("sharpen", s -> new Filter("sharpen", s.next(), s.next()));
     knownCommands.put("greyscale", s -> new Transformation("greyscale", s.next(), s.next()));
     knownCommands.put("sepia", s -> new Transformation("sepia", s.next(), s.next()));
+    knownCommands.put("mosaic", s -> new Mosaic(s.nextInt(), s.next(), s.next()));
     knownCommands.put("q", s -> new Quit());
     knownCommands.put("Q", s -> new Quit());
     knownCommands.put("Quit", s -> new Quit());
