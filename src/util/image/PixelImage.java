@@ -7,7 +7,6 @@ import java.util.Objects;
 import util.kernel.ImageKernel;
 import util.kernel.Kernel;
 import util.seed.PixelSeed;
-import util.seed.Seedling;
 
 //TODO abstract common functionality into helpers
 

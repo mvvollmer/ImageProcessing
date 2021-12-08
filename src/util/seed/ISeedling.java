@@ -1,13 +1,11 @@
 package util.seed;
 
-import java.awt.*;
-import java.util.Collections;
-import java.util.List;
+import java.awt.Color;
 
 import util.Posn;
 
 /**
- * interface representing a Seedling
+ * interface representing a Seedling.
  */
 public interface ISeedling {
   /**
@@ -33,4 +31,10 @@ public interface ISeedling {
    * colors the seedling based on the colors of the pixels in it.
    */
   public void colorSeedling();
+
+  /**
+   * adds seedling colors to a given Image.
+   * @param base image represented by color array.
+   */
+  void addColors(Color[][] base);
 }

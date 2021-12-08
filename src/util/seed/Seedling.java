@@ -13,7 +13,7 @@ import util.Posn;
 /**
  * Class to represent a seedling.
  */
-public class Seedling implements ISeedling{
+public class Seedling implements ISeedling {
   private Posn position;
   private Map<Posn, Color> containedPixels;
 
@@ -75,7 +75,7 @@ public class Seedling implements ISeedling{
       for (int i = 0; i < length; i++) {
         sum = sum + ints.get(i);
       }
-      return sum/length;
+      return sum / length;
     }
   }
 
@@ -90,6 +90,7 @@ public class Seedling implements ISeedling{
     return base;
   }
 
+  @Override
   public void addColors(Color[][] base) {
     Set<Posn> posns = containedPixels.keySet();
     for (Posn x : posns) {

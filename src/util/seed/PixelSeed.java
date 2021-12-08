@@ -12,7 +12,6 @@ import util.image.Image;
  * Class representing a PixelSeed.
  */
 public class PixelSeed implements ISeed {
-  private int numSeeds;
   private List<Seedling> positions;
   private Image image;
 
@@ -22,7 +21,7 @@ public class PixelSeed implements ISeed {
    * @param image image which you would like to Mosaic.
    */
   public PixelSeed(int numSeeds, Image image) {
-    this.numSeeds = numSeeds;
+    numSeeds = numSeeds;
     this.image = image;
     this.positions = buildSeed(numSeeds);
   }
