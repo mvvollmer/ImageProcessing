@@ -1,0 +1,39 @@
+Code Review:
+
+The interfaces were well segregated, flexible, and precise. Specifically, the model interfaces
+were well seperated between those that change the model and those which query the state. The
+controller interfaces were also well seperated, with the supported features being decoupled from the
+controller interface itself. In general the interfaces reflected a well-thought-out design, with
+very few instances of interfaces containing methods that should not be visible for users of that
+interface. An example of this is the method in the ImageProcessingModel interface called
+toBufferedImage, which returns a buffered image of the current image of the model. This could have
+been better served in either the ImageProcessingModelState interface or perhaps in a view interface,
+as this method is used when displaying the image in the GUI.
+
+The implementation followed in the footsteps of its well constructed design, as despite its
+differences when compared to our own previous method of implementation, the implementation was
+consistently good. The model took the approach of storing the images using a two-dimensional array
+of Java Colors, which did cause us some difficulty when implementing the mosaic functionality. Also
+in the model implementation, each functionality has its own method, meaning the model must be
+edited for each new feature. Having one method in the model that encapsulates all functionalities
+that may be applied to it, would only require that a new class be made that encapsulates the proper
+functionality, so that it can be used to manipulate the model. For example, in our previous
+implementation, we had a method called applyTransformation, where a Transformation was an interface
+which represented everything from a flip to a mosaic, meaning adding new functionality meant only
+creating a new implementation of Transformation, and the model remained the same. As far as the
+view and controller are concerned, the implementation was simple, straightforward and easy to extend
+to support new functionality.
+
+The documentation of this program is generally satisfactory, however in certain situations, the
+documentation felt a bit broad and relied on unstated assumptions. While becoming familiar with this
+design, there were times when the lack of specificity created uncertainty about the behavior of the
+design, or even the intended behavior of the design.
+
+The biggest strength of this design was the GUI, as it is well-designed, organized, and allowed for
+easy extension to support new features. Additionally, the code in general was very well organized,
+both in the package structure but also in the class structure. The code was also simple, making
+good use of predefined Java features, meaning that there was less chance of bugs appearing. In the
+same vain, the simplicity of the code also limited the extensibility. For example, when implementing
+the mosaic, the lack of positions that were assigned to the colors required the logic to become
+unwieldy at times. This could be achieved by the use of a pixel, which would store and associate a
+position in the image with the color at that location.
