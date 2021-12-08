@@ -1,40 +1,11 @@
-# Image Processing 
+# Image Processing
+Implemented Image Mosaic
 
-Packages:
+Implemented Image Mosiac by first creating classes and interfaces to deal with seeds
+These were ISeed, ISeedling, PixelSeed, Seedlings.
 
-Model:
-- Interface ImageProcessingModelState
-- Interface ImageProcessingModel extends ImageProcessingModelState
-- Class: Model implements ImageProcessingModel
+To implement this in harmony with the design I created a Mosaic command in similar 
+style to the other commands in the code. Then added a mosaicImage function into the Model,
+keeping in line with the style of other functions in the model. I also documented this in the ImageProcessingModel interface. I added a script command to the Controller. Finally I created a Mosaic button in the GUI and based it off the style of the Brighten button for consitency. I also utilized the Mocks to create a few Mosaic tests.
 
-View:
-- Interface ImageProcessingView
-- Class: View implements ImageProcessingView
-
-Controller:
-- Interface ImageProcessingController
-- Class: Controller implements ImageProcessingController
-- commands: contains the classes for the supported commands following the command design pattern.
-Includes interface ImageProcessingCommands containing an "apply" method which all command classes implement.
-
-Util:
-- Interface ImageState
-- Interface Image extends ImageState
-- Class ImageImpl implements Image
-- Class ImageProcessingProgram containing the main method
-- ImageUtil: utility class utilized for image reading
-- Interface Kernel
-- Class ImageKernel implements Kernel
-
-Tests:
-- ImageProcessingModelTest
-- ImageProcessingViewTest
-- ImageProcessingControllerTest
-
-Bunny image citation:
-
-- Allanwood, G. (2018, February 16). Photo by Gavin Allanwood on unsplash.
-Beautiful Free Images &amp; Pictures. Retrieved November 10, 2021,
-from https://unsplash.com/photos/hcxqLJjI99E. 
-
-All other images (dumby, colorful) created by Ryan Duong and Alexander Naishuler.
+The only issue I ran into was I had trouble keeping up with the logic without use of a Posn class so I made that and used it in my PixelSeed and Seedlings.
