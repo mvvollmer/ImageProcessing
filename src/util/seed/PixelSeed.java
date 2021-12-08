@@ -12,7 +12,6 @@ import util.image.Image;
  * Class representing a PixelSeed.
  */
 public class PixelSeed implements ISeed {
-  private int numSeeds;
   private List<Seedling> positions;
   private Image image;
 
@@ -22,15 +21,12 @@ public class PixelSeed implements ISeed {
    * @param image image which you would like to Mosaic.
    */
   public PixelSeed(int numSeeds, Image image) {
-    this.numSeeds = numSeeds;
     this.image = image;
     this.positions = buildSeed(numSeeds);
   }
 
   @Override
   public void createSeed() {
-    int height = image.getImageHeight();
-    int width = image.getImageWidth();
     cluster();
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
@@ -44,9 +40,6 @@ public class PixelSeed implements ISeed {
     for (int i = 0; i < positions.size(); i++) {
       Seedling current = positions.get(i);
       current.addColors(base);
-      int x = current.getPosn().getX();
-      int y = current.getPosn().getY();
-      base[y][x] = Color.MAGENTA;
     }
     return base;
   }
@@ -68,7 +61,7 @@ public class PixelSeed implements ISeed {
   private void cluster() {
     for (int i = 0; i < image.getImageHeight(); i++) {
       for (int j = 0; j < image.getImageWidth(); j++) {
-        Color current = image.getPixelAt(j, i);
+        Color current = image.getPixelAt(i, j);
         Posn currentPosn = new Posn(j, i);
         Seedling closest = positions.get(0);
         for (int l = 1; l < positions.size(); l++) {
@@ -81,7 +74,7 @@ public class PixelSeed implements ISeed {
     }
   }
 
-  private boolean seededPixel(Posn posn){
+  private boolean seededPixel(Posn posn) {
     int x = 0;
     for (int i = 0; i < positions.size(); i++) {
       if (positions.get(i).containsPosn(posn)) {

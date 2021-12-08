@@ -82,7 +82,8 @@ public class MockGUIModel implements ImageProcessingModel {
 
     loadMap.put(desiredName, new PixelImage(fin));
 
-    log.append(String.format("mosaicImage method called with parameters: %s, %s, %d", imageName, desiredName, seedNum));
+    log.append(String.format("mosaicImage method called with parameters: %s, %s, %d",
+            imageName, desiredName, seedNum));
   }
 
   @Override

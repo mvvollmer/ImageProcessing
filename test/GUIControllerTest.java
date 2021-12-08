@@ -159,6 +159,31 @@ public class GUIControllerTest {
     assertEquals(message, mLog.toString());
   }
 
+  // Testing mosaic command
+  @Test
+  public void testMosaic() {
+    StringBuilder mLog = new StringBuilder();
+    StringBuilder vLog = new StringBuilder();
+    ImageProcessingModel mockModel = new MockGUIModel(mLog);
+    ImageProcessingGUIView mockView = new MockGUIView(vLog);
+    Features c = new GUIController(mockModel);
+    c.setView(mockView);
+    c.load("images/colorful.jpeg");
+
+    c.mosaic(10);
+
+    String message = "The image was processed in the controller, and the following imageName: "
+            + "default was passed to the model, along with an Image that contains the "
+            + "following color mapping:\n"
+            + "47 108 75 137 198 165 157 173 170 0 52 19 94 155 122 61 77 74 0 110 0 58 177 33"
+            + " 112 186 71 "
+            + "6 125 0 79 198 54 12 86 0 87 70 114 67 50 94 95 31 105 brightenImage method called"
+            + " with parameters:"
+            + " 10, default, default-mosaiced-with-10-seeds";
+
+    assertEquals(message, mLog.toString());
+  }
+
   // Testing horizontal-flip command
   @Test
   public void testHorizontalFlip() {

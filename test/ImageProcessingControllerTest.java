@@ -183,6 +183,22 @@ public class ImageProcessingControllerTest {
     assertEquals(message, mLog.toString());
   }
 
+  // Testing mosaic command
+  @Test
+  public void testMosaic() {
+    StringBuilder mLog = new StringBuilder();
+    StringBuilder vLog = new StringBuilder();
+    ImageProcessingModel mockModel = new MockImageProcessingModel(mLog);
+    ImageProcessingView mockView = new MockImageProcessingView(vLog);
+    Readable read = new StringReader("mosaic 10 koala koala-brighten");
+    ImageProcessingController c = new Controller(mockModel, mockView, read);
+    c.processImage();
+
+    String message = "mosaicImage method called with parameters: koala, koala-brighten, 10";
+
+    assertEquals(message, mLog.toString());
+  }
+
   // Testing horizontal-flip command
   @Test
   public void testHorizontalFlip() {
