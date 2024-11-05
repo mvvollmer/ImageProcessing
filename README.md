@@ -4,6 +4,20 @@
 
 ---
 
+## GUI
+
+![Image Processing GUI](res/program-screenshot.jpeg)
+
+---
+
+---
+
+## Example using our Mosiac Feature
+
+![Skyline Before Mosaic](res/ExampleImages/skyline.jpg)
+
+![Skyline After 1000s Mosaic](res/ExampleImages/1000sMosaic.jpg)
+
 ## Project Overview
 
 **ImageProcessing** is a comprehensive Java application designed to transform and enhance images using a range of filters and editing tools. This project highlights my expertise in Java programming, software architecture, and user interface design, as well as my understanding of image processing techniques. Built from the ground up, the project is structured with a clear Model-View-Controller (MVC) architecture, making it scalable and easy to extend with new features.
