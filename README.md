@@ -40,3 +40,12 @@ The project follows a **Model-View-Controller (MVC)** structure:
 This structure ensures flexibility and makes it easy to add new functionalities.
 
 ---
+
+## Why This Project Matters
+This project was designed to highlight my technical expertise in Java and image processing, as well as my ability to design an interactive application with real-world use cases. Through building this program, I demonstrated my skills in:
+
+1. Problem-Solving: Solving complex problems related to image manipulation, such as edge detection and mosaic creation.
+2. Software Engineering: Applying best practices for code structure, modularity, and clean design patterns.
+3. User-Centered Design: Developing a GUI that balances functionality with ease of use.
+
+---
