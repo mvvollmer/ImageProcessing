@@ -23,6 +23,8 @@ Skyline before mosiac
 
 Skyline after mosaic is created with 1000 random points
 
+<img src="res/ExampleImages/1000sMosaic.jpg" alt="Skyline After 1000s Mosaic" style="width:50%; max-width:300px;">
+
 ![Skyline After 1000s Mosaic](res/ExampleImages/1000sMosaic.jpg)
 
 ---
