@@ -6,17 +6,23 @@
 
 ## GUI
 
-![Image Processing GUI](res/program-screenshot.jpeg)
+Our Image Processing GUI:
 
----
+![Image Processing GUI](res/program-screenshot.jpeg)
 
 ---
 
 ## Example using our Mosiac Feature
 
+Skyline before mosiac
+
 ![Skyline Before Mosaic](res/ExampleImages/skyline.jpg)
 
+Skyline after mosaic is created with 1000 random points
+
 ![Skyline After 1000s Mosaic](res/ExampleImages/1000sMosaic.jpg)
+
+---
 
 ## Project Overview
 
