@@ -16,7 +16,7 @@ Our Image Processing GUI:
 
 Skyline before mosiac
 
-<img src="res/ExampleImages/skyline.jpg" alt="Skyline Before Mosaic" style="width:100%; max-width:600px;">
+<img src="res/ExampleImages/skyline.jpg" alt="Skyline Before Mosaic" style="width:100%; max-width:300px;">
 
 
 ![Skyline Before Mosaic](res/ExampleImages/skyline.jpg)
